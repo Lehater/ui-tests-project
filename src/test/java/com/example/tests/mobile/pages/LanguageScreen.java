@@ -15,13 +15,13 @@ import java.util.List;
  */
 public class LanguageScreen {
 
-    private final AppiumDriver<?> driver;
+    private final AppiumDriver driver;
     private final WebDriverWait wait;
 
     private final By languageListItem = AppiumBy.id("org.wikipedia:id/language_local_name");
     private final By addLanguageButton = AppiumBy.id("org.wikipedia:id/add_language_button");
 
-    public LanguageScreen(AppiumDriver<?> driver) {
+    public LanguageScreen(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }

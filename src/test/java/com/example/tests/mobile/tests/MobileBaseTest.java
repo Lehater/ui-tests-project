@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 
 public abstract class MobileBaseTest {
 
-    protected AppiumDriver<?> driver;
+    protected AppiumDriver driver;
 
     @BeforeClass
     public void setUp() throws Exception {

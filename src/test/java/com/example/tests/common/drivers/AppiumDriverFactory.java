@@ -10,12 +10,12 @@ import java.time.Duration;
 
 public class AppiumDriverFactory {
 
-    public static AppiumDriver<?> createAndroidDriver(String appiumServerUrl,
-                                                       String platformName,
-                                                       String deviceName,
-                                                       String automationName,
-                                                       String appPackage,
-                                                       String appActivity) throws MalformedURLException {
+    public static AppiumDriver createAndroidDriver(String appiumServerUrl,
+                                                   String platformName,
+                                                   String deviceName,
+                                                   String automationName,
+                                                   String appPackage,
+                                                   String appActivity) throws MalformedURLException {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", platformName);
@@ -25,7 +25,7 @@ public class AppiumDriverFactory {
         caps.setCapability("appActivity", appActivity);
         caps.setCapability("newCommandTimeout", 300);
 
-        AppiumDriver<?> driver = new AndroidDriver<>(new URL(appiumServerUrl), caps);
+        AppiumDriver driver = new AndroidDriver(new URL(appiumServerUrl), caps);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         return driver;
     }

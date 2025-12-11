@@ -14,12 +14,12 @@ import java.time.Duration;
  */
 public class ArticleScreen {
 
-    private final AppiumDriver<?> driver;
+    private final AppiumDriver driver;
     private final WebDriverWait wait;
 
     private final By articleTitle = AppiumBy.id("org.wikipedia:id/view_page_title_text");
 
-    public ArticleScreen(AppiumDriver<?> driver) {
+    public ArticleScreen(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }

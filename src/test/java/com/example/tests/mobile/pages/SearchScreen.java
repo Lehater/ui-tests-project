@@ -14,13 +14,13 @@ import java.time.Duration;
  */
 public class SearchScreen {
 
-    private final AppiumDriver<?> driver;
+    private final AppiumDriver driver;
     private final WebDriverWait wait;
 
     private final By searchInput = AppiumBy.id("org.wikipedia:id/search_src_text");
     private final By searchResultTitle = AppiumBy.id("org.wikipedia:id/page_list_item_title");
 
-    public SearchScreen(AppiumDriver<?> driver) {
+    public SearchScreen(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }

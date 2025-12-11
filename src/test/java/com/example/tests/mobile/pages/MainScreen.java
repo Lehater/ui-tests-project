@@ -14,7 +14,7 @@ import java.time.Duration;
  */
 public class MainScreen {
 
-    private final AppiumDriver<?> driver;
+    private final AppiumDriver driver;
     private final WebDriverWait wait;
 
     // Локатор строки поиска на главном экране
@@ -23,7 +23,7 @@ public class MainScreen {
     // (опционально) кнопка меню/настроек, если понадобится для смены языка
     private final By menuButton = AppiumBy.accessibilityId("Navigate up");
 
-    public MainScreen(AppiumDriver<?> driver) {
+    public MainScreen(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
