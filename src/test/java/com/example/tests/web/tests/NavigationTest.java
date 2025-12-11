@@ -5,9 +5,9 @@ import com.example.tests.web.pages.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class NavigationTest extends WebBaseTest {
+public class NavigationTest extends BaseWebTest {
 
-    @Test(groups = "web-legacy", enabled = false)
+    @Test(groups = "web-legacy")
     public void openCategoryByName_shouldShowCorrectTitle() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open(baseUrl);

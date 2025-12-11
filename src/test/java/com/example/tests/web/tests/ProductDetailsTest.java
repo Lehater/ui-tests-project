@@ -6,9 +6,9 @@ import com.example.tests.web.pages.ProductPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProductDetailsTest extends WebBaseTest {
+public class ProductDetailsTest extends BaseWebTest {
 
-    @Test(groups = "web-legacy", enabled = false)
+    @Test(groups = "web-legacy")
     public void openFirstProductFromCategory_shouldShowProductPageWithPriceAndAvailability() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open(baseUrl);
@@ -25,7 +25,7 @@ public class ProductDetailsTest extends WebBaseTest {
         Assert.assertTrue(productPage.isAddToBasketButtonDisplayed(), "Add to basket button should be visible");
     }
 
-    @Test(groups = "web-legacy", enabled = false)
+    @Test(groups = "web-legacy")
     public void openFirstBookFromHome_shouldKeepTitleConsistent() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open(baseUrl);

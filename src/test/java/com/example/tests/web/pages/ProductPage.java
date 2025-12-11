@@ -16,7 +16,7 @@ public class ProductPage {
     private final By productTitle = By.cssSelector(".product_main h1");
     private final By price = By.cssSelector(".product_main .price_color");
     private final By availability = By.cssSelector(".product_main .availability");
-    private final By addToBasketButton = By.cssSelector("form#add_to_basket_form button");
+    private final By addToBasketButton = By.xpath("//article[contains(@class,'product_page')]//button[contains(@class,'btn-primary') and contains(normalize-space(),'Add to basket')]");
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;

@@ -22,6 +22,10 @@ public class ArticleScrollTest extends BaseMobileTest {
 
         if (driver instanceof JavascriptExecutor) {
             ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", new java.util.HashMap<String, Object>() {{
+                put("left", 100);
+                put("top", 400);
+                put("width", 800);
+                put("height", 1200);
                 put("direction", "down");
                 put("percent", 0.7);
             }});
@@ -40,4 +44,3 @@ public class ArticleScrollTest extends BaseMobileTest {
         Assert.assertEquals(titleAfterScroll, titleBeforeScroll, "Article title should remain the same after scroll");
     }
 }
-

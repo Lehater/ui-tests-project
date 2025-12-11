@@ -7,13 +7,13 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class PaginationTest extends WebBaseTest {
+public class PaginationTest extends BaseWebTest {
 
-    @Test(groups = "web-legacy", enabled = false)
+    @Test(groups = "web-legacy")
     public void nextPage_shouldChangeBookList() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open(baseUrl);
-        mainPage.openCategoryByName("Travel");
+        mainPage.openCategoryByName("Mystery");
 
         CategoryPage categoryPage = new CategoryPage(driver);
         List<String> firstPageTitles = categoryPage.getBookTitlesOnPage();

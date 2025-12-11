@@ -10,17 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 /**
- * Главный экран Wikipedia (экран "Explore"/"Главная").
+ * Main Wikipedia screen ("Explore").
  */
 public class MainScreen {
 
     private final AppiumDriver driver;
     private final WebDriverWait wait;
 
-    // Локатор строки поиска на главном экране
     private final By searchContainer = AppiumBy.id("org.wikipedia:id/search_container");
-
-    // (опционально) кнопка меню/настроек, если понадобится для смены языка
+    private final By onboardingSkipButton = AppiumBy.id("org.wikipedia:id/fragment_onboarding_skip_button");
     private final By menuButton = AppiumBy.accessibilityId("Navigate up");
 
     public MainScreen(AppiumDriver driver) {
@@ -29,6 +27,14 @@ public class MainScreen {
     }
 
     public void waitForLoaded() {
+        // Dismiss onboarding if it is shown
+        try {
+            WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            shortWait.until(ExpectedConditions.visibilityOfElementLocated(onboardingSkipButton)).click();
+        } catch (org.openqa.selenium.TimeoutException ignored) {
+            // Onboarding not shown
+        }
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchContainer));
     }
 

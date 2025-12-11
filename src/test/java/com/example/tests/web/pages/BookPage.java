@@ -11,7 +11,7 @@ public class BookPage extends BasePage {
     private final By availability = By.cssSelector(".product_main .availability");
     // На странице книги кнопка "Add to basket" может меняться по классам,
     // поэтому используем более общий, но устойчивый селектор по форме и кнопке.
-    private final By addToBasketButton = By.cssSelector("form#add_to_basket_form button");
+    private final By addToBasketButton = By.xpath("//article[contains(@class,'product_page')]//button[contains(@class,'btn-primary') and contains(normalize-space(),'Add to basket')]");
 
     public BookPage(WebDriver driver) {
         super(driver);
@@ -31,6 +31,6 @@ public class BookPage extends BasePage {
     }
 
     public boolean isAddToBasketButtonDisplayed() {
-        return driver.findElement(addToBasketButton).isDisplayed();
+        return !wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(addToBasketButton)).isEmpty();
     }
 }
