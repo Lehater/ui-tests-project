@@ -19,16 +19,10 @@ public class CategoryPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeader));
     }
 
-    /**
-     * Заголовок категории (совместимо с getCategoryTitle() из старых тестов).
-     */
     public String getHeaderText() {
         return driver.findElement(pageHeader).getText();
     }
 
-    /**
-     * Поддержка старого имени метода из NavigationTest.
-     */
     public String getCategoryTitle() {
         return getHeaderText();
     }
@@ -45,9 +39,6 @@ public class CategoryPage extends BasePage {
                 .collect(Collectors.toList());
     }
 
-    /**
-     * Поддержка старого имени метода из PaginationTest.
-     */
     public List<String> getBookTitlesOnPage() {
         return getAllBookTitlesOnPage();
     }
@@ -59,11 +50,9 @@ public class CategoryPage extends BasePage {
         return new CategoryPage(driver);
     }
 
-    /**
-     * Используется в PaginationTest для проверки наличия следующей страницы.
-     */
     public boolean hasNextPage() {
         List<WebElement> nextButtons = driver.findElements(nextButton);
         return !nextButtons.isEmpty() && nextButtons.get(0).isDisplayed();
     }
 }
+

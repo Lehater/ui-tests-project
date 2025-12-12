@@ -13,7 +13,6 @@ public class MainPage {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    // Locators
     private final By categoryList = By.cssSelector(".side_categories ul li ul li a");
     private final By firstBookTitle = By.cssSelector("section div ol li:first-child h3 a");
 

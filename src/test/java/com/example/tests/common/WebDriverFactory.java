@@ -10,7 +10,7 @@ public class WebDriverFactory {
     public static WebDriver createWebDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        // Настройки под запуск в виртуалке/CI без GUI
+        // Configure Chrome for headless/CI environments
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");

@@ -11,7 +11,7 @@ import java.time.Duration;
 import java.util.List;
 
 /**
- * Экран выбора языков (упрощённая модель, может потребовать корректировки локаторов под текущую версию приложения).
+ * Language selection screen in the Wikipedia app.
  */
 public class LanguageScreen {
 
@@ -27,7 +27,7 @@ public class LanguageScreen {
     }
 
     public void addLanguageIfNeeded(String languageName) {
-        // Нажимаем "Add language", если есть такая кнопка
+        // Tap "Add language" if the button is visible
         List<WebElement> addButtons = driver.findElements(addLanguageButton);
         if (!addButtons.isEmpty()) {
             addButtons.get(0).click();
@@ -46,3 +46,4 @@ public class LanguageScreen {
         throw new IllegalStateException("Language not found: " + languageName);
     }
 }
+

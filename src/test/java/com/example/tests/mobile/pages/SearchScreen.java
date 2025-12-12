@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 /**
- * Экран поиска Wikipedia.
+ * Search screen of the Wikipedia app.
  */
 public class SearchScreen {
 
@@ -40,3 +40,4 @@ public class SearchScreen {
         results.get(index).click();
     }
 }
+

@@ -11,7 +11,7 @@ public abstract class MobileBaseTest {
 
     @BeforeClass
     public void setUp() throws Exception {
-        // TODO: вынести URL и капабилити в конфиг при необходимости
+        // TODO: Move Appium URL and capabilities to config if this base class is used
         String appiumUrl = "http://127.0.0.1:4723/";
         driver = AppiumDriverFactory.createAndroidDriver(
                 appiumUrl,
@@ -30,3 +30,4 @@ public abstract class MobileBaseTest {
         }
     }
 }
+
